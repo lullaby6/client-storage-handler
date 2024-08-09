@@ -28,3 +28,22 @@ const csh = {
         entries: () => Object.entries(csh.cookies.getAll()),
     }
 };
+
+// sessionStorage:
+// Similar a localStorage, pero los datos solo persisten durante la sesión del navegador.
+// IndexedDB:
+// Una base de datos de objetos de bajo nivel para almacenar grandes cantidades de datos estructurados.
+// Web SQL Database (obsoleto):
+// Una API para trabajar con bases de datos SQL en el navegador, aunque está en desuso.
+// Cache API:
+// Parte de Service Workers, permite almacenar en caché recursos de red para uso offline.
+// File System Access API:
+// Permite acceso al sistema de archivos local del usuario (con permiso).
+// Application Cache (obsoleto):
+// Usado para hacer aplicaciones web disponibles offline, aunque está siendo reemplazado por Service Workers.
+// WebStorage:
+// Un término que engloba tanto localStorage como sessionStorage.
+// Almacenamiento en memoria:
+// Usando variables JavaScript durante la ejecución de la página.
+// Web Storage API:
+// Incluye localStorage y sessionStorage, proporcionando métodos para almacenar datos de pares clave/valor.
