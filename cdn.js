@@ -1,6 +1,6 @@
 const csh = {
     local: {
-        getAll: () => localStorage,
+        getAll: () => ({...localStorage}),
         clear: () => localStorage.clear(),
         get: key => key ? csh.local.getAll()[key] : csh.local.getAll(),
         set: (key, value) => localStorage.setItem(key, value),
@@ -13,6 +13,21 @@ const csh = {
         entries: () => Object.entries(localStorage),
         setObject: (key, value) => localStorage.setItem(key, JSON.stringify(value)),
         getObject: key => JSON.parse(localStorage.getItem(key)),
+    },
+    session: {
+        getAll: () => ({...sessionStorage}),
+        clear: () => sessionStorage.clear(),
+        get: key => key ? csh.session.getAll()[key] : csh.session.getAll(),
+        set: (key, value) => sessionStorage.setItem(key, value),
+        remove: key => sessionStorage.removeItem(key),
+        has: key => key in sessionStorage,
+        isEmpty: () => sessionStorage.length === 0,
+        size: () => sessionStorage.length,
+        keys: () => Object.keys(sessionStorage),
+        values: () => Object.values(sessionStorage),
+        entries: () => Object.entries(sessionStorage),
+        setObject: (key, value) => sessionStorage.setItem(key, JSON.stringify(value)),
+        getObject: key => JSON.parse(sessionStorage.getItem(key)),
     },
     cookies: {
         getAll: () => Object.fromEntries(document.cookie.split(';').map(s => s.trim().split('=')).filter(([k]) => k)),
@@ -28,22 +43,3 @@ const csh = {
         entries: () => Object.entries(csh.cookies.getAll()),
     }
 };
-
-// sessionStorage:
-// Similar a localStorage, pero los datos solo persisten durante la sesión del navegador.
-// IndexedDB:
-// Una base de datos de objetos de bajo nivel para almacenar grandes cantidades de datos estructurados.
-// Web SQL Database (obsoleto):
-// Una API para trabajar con bases de datos SQL en el navegador, aunque está en desuso.
-// Cache API:
-// Parte de Service Workers, permite almacenar en caché recursos de red para uso offline.
-// File System Access API:
-// Permite acceso al sistema de archivos local del usuario (con permiso).
-// Application Cache (obsoleto):
-// Usado para hacer aplicaciones web disponibles offline, aunque está siendo reemplazado por Service Workers.
-// WebStorage:
-// Un término que engloba tanto localStorage como sessionStorage.
-// Almacenamiento en memoria:
-// Usando variables JavaScript durante la ejecución de la página.
-// Web Storage API:
-// Incluye localStorage y sessionStorage, proporcionando métodos para almacenar datos de pares clave/valor.
