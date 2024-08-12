@@ -59,9 +59,19 @@ Both csh.local and csh.session share the same API:
 
 ### Cookies (csh.cookies)
 
-| Key | Description |
+| Method | Description |
 |-----------------|----------------------------------------------------------------------------|
-| src | aaaaaaaa |
+| getAll() | Get all cookies |
+| clear() | Clear all cookies |
+| get(key) | GGet a cookie by key (or all cookies if no key is provided) |
+| set(key, value) | Set a cookie |
+| remove(key) | Remove a cookie |
+| has(key) | Check if a cookie exists |
+| isEmpty() | Check if there are no cookies |
+| size() | Get the number of cookies |
+| keys() | Get all cookie keys |
+| values() | Get all cookie values |
+| entries() | Get all cookie key-value pairs |
 
 ## Examples
 
