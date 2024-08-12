@@ -37,6 +37,31 @@ console.log(csh.cookies.get('user')); // 'John'
 
 ## API Reference
 
+### Local Storage (csh.local) and Session Storage (csh.session)
+
+Both csh.local and csh.session share the same API:
+
+| Method | Description |
+|-----------------|----------------------------------------------------------------------------|
+| getAll() | Get all items in storage |
+| clear() | Clear all items from storage |
+| get(key) | Get an item by key (or all items if no key is provided) |
+| set(key, value) | Set an item |
+| remove(key) | Remove an item |
+| has(key) | Check if an item exists |
+| isEmpty() | Check if storage is empty |
+| size() | Get the number of items in storage |
+| keys() | Get all keys in storage |
+| values() | Get all values in storage |
+| entries() | Get all key-value pairs in storage |
+| setObject(key, value) | Set a JSON object |
+| getObject(key) | Get a JSON object |
+
+### Cookies (csh.cookies)
+
+| Key | Description |
+|-----------------|----------------------------------------------------------------------------|
+| src | aaaaaaaa |
 
 ## Examples
 
