@@ -127,8 +127,8 @@ csh.session.clear();
 ### Cookies
 
 ```js
-// Set and get a cookie
-csh.cookies.set('session', 'abc123');
+// Set and get a cookie that expires in 3 days
+csh.cookies.set('session', 'abc123', 3);
 console.log(csh.cookies.get('session')); // 'abc123'
 
 // Check if a cookie exists
