@@ -48,6 +48,7 @@ Both csh.local and csh.session share the same API:
 | get(key) | Get an item by key (or all items if no key is provided) |
 | set(key, value) | Set an item |
 | remove(key) | Remove an item |
+| rename(key, newKey) | Rename an item |
 | has(key) | Check if an item exists |
 | isEmpty() | Check if storage is empty |
 | size() | Get the number of items in storage |
@@ -64,8 +65,10 @@ Both csh.local and csh.session share the same API:
 | getAll() | Get all cookies |
 | clear() | Clear all cookies |
 | get(key) | GGet a cookie by key (or all cookies if no key is provided) |
-| set(key, value) | Set a cookie |
+| set(key, value, days = null) | Set a cookie (no expiration by default) |
+| setExpiration(key, days = 1) | Set cookie days expiration |
 | remove(key) | Remove a cookie |
+| rename(key, newKey) | Rename a cookie |
 | has(key) | Check if a cookie exists |
 | isEmpty() | Check if there are no cookies |
 | size() | Get the number of cookies |
